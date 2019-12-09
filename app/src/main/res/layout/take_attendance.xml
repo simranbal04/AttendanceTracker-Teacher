@@ -22,12 +22,12 @@
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:id="@+id/qr_img"/>
+
     <Button
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="DONE"
-        android:onClick="doneclick"
         android:layout_margin="20dp"
-        />
+        android:onClick="doneclick"
+        android:text="DONE" />
 
 </LinearLayout>
