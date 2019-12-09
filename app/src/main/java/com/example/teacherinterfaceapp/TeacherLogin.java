@@ -57,6 +57,7 @@ public class TeacherLogin extends AppCompatActivity {
                     // if username is correct data will exist
                     if (dataSnapshot.exists()) {
                         Teachers student_data = dataSnapshot.getValue(Teachers.class);
+
                         if (student_data.getPassword().equalsIgnoreCase(password)) {
                             Intent in = new Intent(getApplicationContext(), TeacherDashboard.class);
                             in.putExtra("username", username);

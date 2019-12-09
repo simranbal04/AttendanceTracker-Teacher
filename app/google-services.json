@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1019623419500",
+    "firebase_url": "https://teacherinterfaceapp.firebaseio.com",
+    "project_id": "teacherinterfaceapp",
+    "storage_bucket": "teacherinterfaceapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1019623419500:android:29fc771561988c161c3249",
+        "android_client_info": {
+          "package_name": "com.example.teacherinterfaceapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1019623419500-8petmirsljlhrub7nkm3muehas8tfqas.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.teacherinterfaceapp",
+            "certificate_hash": "e646972177dc8b419482dca294ea1e283989bacb"
+          }
+        },
+        {
+          "client_id": "1019623419500-ei12eugllcm3f3jf3scavd4s88mh2hq4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCp5Ng9BV0N_0AtMFyuvJiYOcUYV2FPFac"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1019623419500-ei12eugllcm3f3jf3scavd4s88mh2hq4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
