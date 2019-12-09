@@ -1,4 +1,4 @@
 package com.example.teacherinterfaceapp;
 
-public class TeacherDashboard {
+public class Teacherdashboard {
 }
