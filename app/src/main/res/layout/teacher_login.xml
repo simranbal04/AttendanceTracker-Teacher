@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:padding="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TeacherLogin">
+    <ImageView
+        android:layout_height="200dp"
+        android:layout_width="200dp"
+        android:src="@drawable/attendance"
+        android:layout_gravity="center"
+    />
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="LOGIN"
+        android:layout_margin="20dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        android:textColor="#000000"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Username"
+        android:layout_margin="12dp"
+        android:id="@+id/username_et"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter     Password"
+        android:id="@+id/password_et"
+        />
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+
+        android:color="#ffffff"
+        android:text="LOGIN"
+        android:onClick="studentLogin"
+        android:layout_gravity="center"
+        android:layout_margin="12dp"/>
+
+</LinearLayout>
