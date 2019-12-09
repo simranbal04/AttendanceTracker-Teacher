@@ -2,6 +2,7 @@ package com.example.teacherinterfaceapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -11,6 +12,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.example.teacherinterfaceapp.Teachers;
 
 import java.io.FileReader;
 
@@ -28,7 +30,8 @@ public class TeacherLogin extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.teacher_login);
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        database = FirebaseDatabase.getInstance();
+        Log.d("TAG", "onCreate: "+database.getReference("teachers").getKey());
         studentReference = database.getReference("teachers");
 
         //refer edittext from xml file
@@ -57,8 +60,9 @@ public class TeacherLogin extends AppCompatActivity {
                     // if username is correct data will exist
                     if (dataSnapshot.exists()) {
                         Teachers student_data = dataSnapshot.getValue(Teachers.class);
+
                         if (student_data.getPassword().equalsIgnoreCase(password)) {
-                            Intent in = new Intent(getApplicationContext(), TeacherDashboard.class);
+                            Intent in = new Intent(getApplicationContext(), Teacherdashboard.class);
                             in.putExtra("username", username);
                             startActivity(in);
                             finish();
