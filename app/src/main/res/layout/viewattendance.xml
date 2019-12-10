@@ -10,19 +10,21 @@
         android:id="@+id/TodayAttendanceButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TODAY ATTENDANCE"
         android:layout_margin="20dp"
         android:background="#AD1457"
-        android:color="#ffffff" />
+        android:color="#ffffff"
+        android:onClick="todayattendance"
+        android:text="TODAY ATTENDANCE" />
 
     <Button
         android:id="@+id/WeeklyAttendanceButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="WEEKLY ATTENDANCE"
         android:layout_margin="20dp"
         android:background="#AD1457"
-        android:color="#ffffff"/>
+        android:color="#ffffff"
+        android:onClick="weekelyattendance"
+        android:text="WEEKLY ATTENDANCE" />
 
 
 </LinearLayout>

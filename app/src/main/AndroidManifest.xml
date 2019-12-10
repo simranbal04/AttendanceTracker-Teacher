@@ -10,29 +10,29 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-<!--        <activity android:name=".MainActivity">-->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-<!--        </activity>-->
-<!--        <activity android:name=".TeacherLogin">-->
-
-<!--        </activity>-->
-        //<activity android:name=".TakeAttendance">
-
-       // </activity>
-        <activity android:name=".TeacherDashboard">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".TeacherLogin">
+
+        </activity>
+        <activity android:name=".TakeAttendance">
+
+       </activity>
+        <activity android:name=".TeacherDashboard">
+<!--            <intent-filter>-->
+
         </activity>
 
-<!--        <activity android:name=".TodayAttendance"></activity>-->
-<!--        <activity android:name=".Viewattendance"> </activity>-->
+        <activity android:name=".TodayAttendance"></activity>
+        <activity android:name=".Viewattendance"> </activity>
+        <activity android:name=".WeeklyAttendance">
+
+        </activity>
 
     </application>
 
