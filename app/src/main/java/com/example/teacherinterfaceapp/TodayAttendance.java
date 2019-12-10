@@ -1,11 +1,8 @@
 package com.example.teacherinterfaceapp;
-
 import android.os.Bundle;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
@@ -41,6 +38,8 @@ public class TodayAttendance extends AppCompatActivity {
         todayDate = sdf.format(Calendar.getInstance().getTime());
 
         date_tv.setText("Date: " +" "  +todayDate);
+
     }
 
 }
+

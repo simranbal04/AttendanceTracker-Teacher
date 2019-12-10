@@ -1,4 +1,8 @@
 package com.example.teacherinterfaceapp;
 
-public class WeeklyAttendance {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class WeeklyAttendance extends AppCompatActivity {
+
+
 }
