@@ -42,9 +42,9 @@ public class WeeklyAttendance extends AppCompatActivity {
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.CANADA);
 
     String date;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.weeklyattendance);
 
@@ -64,34 +64,68 @@ public class WeeklyAttendance extends AppCompatActivity {
         studentReference = firebaseDatabase.getReference("students");
 
 
+        //    DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener()
+        final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener()
+        {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth)
+            {
+                myCalendar.set(Calendar.YEAR, year);
+                myCalendar.set(Calendar.MONTH, month);
+                myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+
+                if (start_or_end == 1)
+                {
+                    startDate.set(Calendar.YEAR, year);
+                    startDate.set(Calendar.MONTH, month);
+                    startDate.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                    startdate_et.setText(sdf.format(myCalendar.getTime()));
+                } else
+                {
+                    endDate.set(Calendar.YEAR, year);
+                    endDate.set(Calendar.MONTH, month);
+                    endDate.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                    enddate_et.setText(sdf.format(myCalendar.getTime()));
+                }
+
+            }
+        };
+
+
         startdate_et.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-                if (hasFocus)
-                {
+                if (hasFocus) {
                     start_or_end = 1;
-//                    DatePickerDialog dialog = new DatePickerDialog(WeeklyAttendance.this, date, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH));
-//                    dialog.show();
+                    DatePickerDialog dialog = new DatePickerDialog(WeeklyAttendance.this ,date, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH));
+                    dialog.show();
 
-                }
-                else
-                {
+                } else {
 
                 }
             }
         });
 
-//        DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
-//            @Override
-//            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth)
-//            {
-//             myCalendar.set(Calendar.YEAR, year);
-//             myCalendar.set(Calendar.MONTH, month);
-//             myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-//
-//            }
-//        }
+        enddate_et.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+                    start_or_end = 2;
+                    DatePickerDialog dialog = new DatePickerDialog(WeeklyAttendance.this, date, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH));
+                    dialog.show();
+                } else {
+                }
+
+            }
+        });
 
     }
+
+    public void chechrecord(View view)
+    {
+        
+    }
+
+
 
 }
