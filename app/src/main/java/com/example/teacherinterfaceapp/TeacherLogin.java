@@ -62,7 +62,7 @@ public class TeacherLogin extends AppCompatActivity {
                         Teachers student_data = dataSnapshot.getValue(Teachers.class);
 
                         if (student_data.getPassword().equalsIgnoreCase(password)) {
-                            Intent in = new Intent(getApplicationContext(), Teacherdashboard.class);
+                            Intent in = new Intent(getApplicationContext(), TeacherDashboard.class);
                             in.putExtra("username", username);
                             startActivity(in);
                             finish();
