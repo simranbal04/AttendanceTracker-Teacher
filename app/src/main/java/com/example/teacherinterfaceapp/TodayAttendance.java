@@ -1,6 +1,8 @@
 package com.example.teacherinterfaceapp;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -38,6 +40,8 @@ public class TodayAttendance extends AppCompatActivity {
     String todayDate;
     DatabaseReference attendanceReference, studentsReference;
     LinearLayout classlist;
+
+    String maillist[];
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -109,6 +113,10 @@ public class TodayAttendance extends AppCompatActivity {
                     }
                 }
 
+                maillist=new String[absent];
+
+//                maillist = new String[absent];
+
 // data to be shown in textfields
 
                 todaystudents_tv.setText("Total Students:  " + list.size());
@@ -163,6 +171,8 @@ public class TodayAttendance extends AppCompatActivity {
 
             } else {
                 imageView.setImageResource(R.drawable.ic_close_black_24dp);
+                maillist[i]=namelist.get(key).getEmail();
+
                 i++;
             }
 
@@ -179,6 +189,25 @@ public class TodayAttendance extends AppCompatActivity {
 
             layout2.addView(imageView);
             classlist.addView(layout2);
+        }
+
+    }
+
+    public void sendmail(View view )
+    {
+        Intent i = new Intent(Intent.ACTION_SEND);
+        i.setType("message/rfc822");
+        i.putExtra(Intent.EXTRA_EMAIL, maillist);
+        i.putExtra(Intent.EXTRA_SUBJECT,"Absent in Today's Class");
+        i.putExtra(Intent.EXTRA_TEXT,"Please reply back with reason of your absence in class");
+
+        try {
+            startActivity(Intent.createChooser(i,"Send mail..."));
+
+        }
+        catch (android.content.ActivityNotFoundException e)
+        {
+            Toast.makeText(TodayAttendance.this,"No Student found ",Toast.LENGTH_SHORT).show();
         }
 
     }

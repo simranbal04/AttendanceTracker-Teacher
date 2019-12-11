@@ -2,9 +2,9 @@ package com.example.teacherinterfaceapp;
 
 public class Students {
     private int studentid;
-    private String name,program,classname,instructor,username,password;
+    private String name,program,classname,instructor,username,password,email;
 
-    public Students(int studentid, String name, String program, String classname, String instructor, String username, String password) {
+    public Students(int studentid, String name, String program, String classname, String instructor, String username, String password, String email) {
         this.studentid = studentid;
         this.name = name;
         this.program = program;
@@ -12,6 +12,7 @@ public class Students {
         this.instructor = instructor;
         this.username = username;
         this.password = password;
+        this.email = email;
     }
 
     public int getStudentid() {
@@ -68,5 +69,13 @@ public class Students {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
