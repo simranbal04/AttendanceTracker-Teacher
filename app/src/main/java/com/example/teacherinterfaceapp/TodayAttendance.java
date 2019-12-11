@@ -80,8 +80,8 @@ public class TodayAttendance extends AppCompatActivity {
 
                     for (DataSnapshot d : dataSnapshot.getChildren()) {
                         Students obj = d.getValue(Students.class);
-                        list.put(obj.getStudentid(), false);
-                        namelist.put(obj.getStudentid(), obj);
+                        list.put(Integer.valueOf(obj.getStudentid()), false);
+                        namelist.put(Integer.valueOf(obj.getStudentid()), obj);
 
                     }
                     fetchAttendance();
