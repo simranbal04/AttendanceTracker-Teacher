@@ -105,6 +105,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1022664026658-h92jndkh572pd1dmms28bmmltusktpbr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.teacherinterfaceapp",
+            "certificate_hash": "2a4bcb5b5ffb9ed04ae06564b72c0b06186bf16d"
+          }
+        },
+        {
           "client_id": "1022664026658-7a5u75n1cfgo54salqa8lqmfm1nu5iep.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -142,6 +150,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1022664026658-pc9fiv21jtv8ptpjdpd2e6jjtm6c3ujt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.software.studentinterfaceattendance",
+            "certificate_hash": "e646972177dc8b419482dca294ea1e283989bacb"
+          }
+        },
+        {
           "client_id": "1022664026658-scs6r74bdg1jdp75fp7dgbp1c3avpqhi.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -178,6 +194,22 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "1022664026658-gkarfsb8g3l1342s9a5bifn1p71kuffl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.software.teacherinterfaceattendance",
+            "certificate_hash": "e646972177dc8b419482dca294ea1e283989bacb"
+          }
+        },
+        {
+          "client_id": "1022664026658-5kg8joqoqt54guuqqncojhrmmkihjtk4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.software.teacherinterfaceattendance",
+            "certificate_hash": "2a4bcb5b5ffb9ed04ae06564b72c0b06186bf16d"
+          }
+        },
         {
           "client_id": "1022664026658-fnpkp5recuatuv3m6mp177gmmuu7e58f.apps.googleusercontent.com",
           "client_type": 1,
