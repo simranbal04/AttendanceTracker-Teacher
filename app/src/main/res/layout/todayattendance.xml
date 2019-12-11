@@ -68,7 +68,7 @@
 
     <LinearLayout
         android:id="@+id/classlist"
-        android:layout_width="385dp"
+        android:layout_width="323dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="10dp" />

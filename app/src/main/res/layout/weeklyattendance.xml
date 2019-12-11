@@ -28,17 +28,18 @@
         android:text="Check" />
 
     <TextView
+        android:id="@+id/lowattendance_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/lowattendance_tv"
-        android:text="Attendance Lower than 75%"
+        android:text="Attendance Lower than 50%"
         android:textAlignment="center"
-        android:textSize="22dp"
-        android:textColor="@color/colorAccent"/>
+        android:textColor="@color/colorAccent"
+        android:textSize="22dp" />
 
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:id="@+id/classlist"
+        android:layout_width="331dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="10dp">
@@ -47,11 +48,11 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/mailbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/mailbutton"
         android:layout_margin="10dp"
-        android:text="Send Mail to Absent Students"/>
+        android:text="Send Mail to Absent Students" />
 
 
 </LinearLayout>
