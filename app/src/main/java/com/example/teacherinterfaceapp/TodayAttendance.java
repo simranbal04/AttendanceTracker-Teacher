@@ -35,6 +35,8 @@ public class TodayAttendance extends AppCompatActivity {
 
     TreeMap<Integer, Boolean> list;
     TreeMap<Integer, Students> namelist;
+    TreeMap<Integer, Students> emaillist;
+
 
 
     String todayDate;
@@ -59,6 +61,7 @@ public class TodayAttendance extends AppCompatActivity {
         classlist = (LinearLayout) findViewById(R.id.classlist);
         list = new TreeMap<>();
         namelist = new TreeMap<>();
+        emaillist = new TreeMap<>();
 
         // Date Fetch
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.CANADA);
@@ -82,6 +85,12 @@ public class TodayAttendance extends AppCompatActivity {
                         Students obj = d.getValue(Students.class);
                         list.put(Integer.valueOf(obj.getStudentid()), false);
                         namelist.put(Integer.valueOf(obj.getStudentid()), obj);
+//                        maillist.put(obj.getEmail(),obj);
+//                        final Students put = maillist.put(maillist.getEmail());
+//                        list.put(obj.getStudentid(),true);
+//                        textview.setText(namelist.get(key).getName());
+
+
 
                     }
                     fetchAttendance();
@@ -108,6 +117,7 @@ public class TodayAttendance extends AppCompatActivity {
                 if (dataSnapshot.exists()) {
                     for (DataSnapshot d : dataSnapshot.getChildren()) {
                         list.put(Integer.parseInt(d.getKey()), true);
+//                        emaillist.put(d.getKey(),true);
                         present++;
                         absent--;
                     }

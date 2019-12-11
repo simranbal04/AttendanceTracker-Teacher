@@ -1,6 +1,7 @@
 package com.example.teacherinterfaceapp;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -22,6 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Iterator;
 import java.util.Locale;
@@ -59,6 +61,9 @@ public class WeeklyAttendance extends AppCompatActivity {
 
     TreeMap<Integer,Integer> list;
     TreeMap<Integer,Students> namelist;
+    TreeMap<Integer, Students> emailist;
+
+    ArrayList<String> maillist = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,6 +87,7 @@ public class WeeklyAttendance extends AppCompatActivity {
 
         list = new TreeMap<>();
         namelist = new TreeMap<>();
+        emailist = new TreeMap<>();
 
         //    DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener()
         final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener()
@@ -285,12 +291,38 @@ public class WeeklyAttendance extends AppCompatActivity {
             {
                 layout2.addView(textView1);
                 classList.addView(layout2);
+                maillist.add(namelist.get(key).getEmail());
             }
 
         }
     }
 
+public void sendmail(View view)
+{
+    Log.d("MSGMSG",maillist.toString());
 
+    String mail[]=new String[maillist.size()];
+    for (int i=0;i<maillist.size();i++)
+    {
+        mail[i]=maillist.get(i);
+    }
+
+
+    Intent i = new Intent(Intent.ACTION_SEND);
+    i.setType("message/rfc822");
+    i.putExtra(Intent.EXTRA_EMAIL, maillist);
+    i.putExtra(Intent.EXTRA_SUBJECT,"Low Attendance");
+    i.putExtra(Intent.EXTRA_TEXT,"You are having low attendance, Kindly do meet me in class");
+
+    try {
+        startActivity(Intent.createChooser(i,"Send mail..."));
+
+    }
+    catch (android.content.ActivityNotFoundException e)
+    {
+        Toast.makeText(WeeklyAttendance.this,"No Student found ",Toast.LENGTH_SHORT).show();
+    }
+}
 
 
 }
