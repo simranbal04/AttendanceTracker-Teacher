@@ -1,10 +1,10 @@
 package com.example.teacherinterfaceapp;
 
 public class Students {
-    private int studentid;
-    private String name,program,classname,instructor,username,password,email;
+//    private int studentid;
+    private String name,program,classname,instructor,username,password,email,studentid;
 
-    public Students(int studentid, String name, String program, String classname, String instructor, String username, String password, String email) {
+    public Students(String studentid, String name, String program, String classname, String instructor, String username, String password, String email) {
         this.studentid = studentid;
         this.name = name;
         this.program = program;
@@ -15,11 +15,19 @@ public class Students {
         this.email = email;
     }
 
-    public int getStudentid() {
+//    public int getStudentid() {
+//        return studentid;
+//    }
+//
+//    public void setStudentid(int studentid) {
+//        this.studentid = studentid;
+//    }
+
+    public String getStudentid() {
         return studentid;
     }
 
-    public void setStudentid(int studentid) {
+    public void setStudentid(String studentid) {
         this.studentid = studentid;
     }
 
