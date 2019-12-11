@@ -36,12 +36,12 @@ public class TakeAttendance extends AppCompatActivity {
         setContentView(R.layout.take_attendance);
 
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        textReference = firebaseDatabase.getReference("attendancetext");
+        textReference = firebaseDatabase.getReference("attendancedata");
 
         qr_img = findViewById(R.id.qr_img);
 
         //get today's date
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd", Locale.US);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
         todayDate = sdf.format(Calendar.getInstance().getTime());
 
         //check if QR-code is already generated
@@ -54,7 +54,8 @@ public class TakeAttendance extends AppCompatActivity {
 
                     //show the QR already generated from database in text view
                     text_qr = dataSnapshot.getValue() + "";
-                } else {
+                } else
+                    {
                     Random r = new Random();
                     int random = r.nextInt(8000000 - 6000000) + 6000000;
                     textReference.child(todayDate).setValue(random + "");
